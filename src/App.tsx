@@ -6,7 +6,7 @@ import FormElements from "./components/FormElements";
 const formFields = [
   { label: "First Name", id: 1, type: "text" },
   { label: "Last Name", id: 2, type: "text" },
-  { label: "Email", id: 3, type: "text" },
+  { label: "Email", id: 3, type: "email" },
   { label: "DOB", id: 4, type: "date" },
   { label: "Phone number", id: 5, type: "number" },
 ];
