@@ -13,7 +13,11 @@ function Preview(props: { id: number }) {
       <div className="text-xl font-bold m-4">{form.title}</div>
       <Link
         className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 my-4 rounded-lg"
-        href={`/preview/${props.id}/1`}
+        href={
+          form.formFields.length > 0
+            ? `/preview/${props.id}/1`
+            : `/forms/${props.id}`
+        }
       >
         Start preview
       </Link>
