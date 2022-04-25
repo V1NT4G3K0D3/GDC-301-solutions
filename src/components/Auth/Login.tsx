@@ -1,6 +1,15 @@
 import { navigate } from "raviger";
 import React, { useEffect, useState } from "react";
 import { login } from "../Utils/apiUtils";
+import styled from "styled-components";
+
+const Container = styled.div`
+w-full max-w-lg divide-y divide-gray-200
+`;
+
+const Input = styled.div`
+m-4
+`;
 
 function Login() {
   const [username, setusername] = useState("");
@@ -26,10 +35,10 @@ function Login() {
   };
 
   return (
-    <div className="w-full max-w-lg divide-y divide-gray-200">
+    <Container>
       <h1 className="text-2xl my-2 text-gray-700">Login</h1>
       <form className="py-4" onSubmit={handleSubmit}>
-        <div className="mb-4">
+        <Input>
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="username"
@@ -44,8 +53,8 @@ function Login() {
             value={username}
             onChange={(e) => setusername(e.target.value)}
           />
-        </div>
-        <div className="mb-4">
+        </Input>
+        <Input>
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="password"
@@ -60,8 +69,8 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <div className="flex items-center justify-between">
+        </Input>
+        <div className="flex items-center justify-between my-4">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
@@ -70,7 +79,7 @@ function Login() {
           </button>
         </div>
       </form>
-    </div>
+    </Container>
   );
 }
 
